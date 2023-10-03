@@ -6,6 +6,7 @@ REFRESH_TOKEN='96ea0035a7ec9d341c9fb66424d931baf5c6320c'
 TOKEN_EXPIRE_TIME='2011698986'
 EOL
 
+git clone https://gitlab.com/ntrungcn/923.git
 
 for folder in */; do
   folder_name="${folder%/}"
