@@ -1,4 +1,4 @@
-cat <<EOL > /home/codespace/.config/imgurbash2/credentials.conf
+cat <<EOL > ./credentials.conf
 CLIENT_ID='5b4a8d5063c5a70'
 CLIENT_SECRET='b5a7f7ecaa6ee0a2afde8f1817aef4abe186b9bf'
 ACCESS_TOKEN='8925ed0f84d1a894822f6dd2df9ac8818ae025a7'
