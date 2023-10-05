@@ -18,7 +18,7 @@ done
 
 # In ra các link kết quả và ghi vào tệp
 for link in "${result_links[@]}"; do
-  echo "$link" >> /home/ntrungcn/index.html
+  echo "$link" >> /opt/buildhome/repo/index.html
 done
 
 cd ..
