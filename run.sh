@@ -10,7 +10,7 @@ cd $album
 # ls | head -n 50 | xargs rm
 
 for file in *; do
-  ./imgurbash2 -l -a "$imgur_id" "$file" | grep -oP 'https://imgur\.com/\S+' >> index.html
+  ./imgurbash2 -l -a "$imgur_id" "$file" | grep -oP 'https://i.imgur\.com/\S+' >> index.html
 done
 
 cd ..
