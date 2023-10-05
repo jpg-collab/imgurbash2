@@ -7,8 +7,6 @@ cp "imgurbash2" "./$album"
 
 cd $album
 
-ls | head -n 50 | xargs rm
-
 ls -a
 
 result_links=()  # Tạo một mảng để lưu trữ các link kết quả
@@ -20,7 +18,7 @@ done
 
 # In ra các link kết quả và ghi vào tệp
 for link in "${result_links[@]}"; do
-  echo "$link" >> /opt/buildhome/repo/index.html
+  echo "$link" >> /home/ntrungcn/index.html
 done
 
 cd ..
