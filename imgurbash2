@@ -526,16 +526,15 @@ Fill in the below fields:
 "
 
 	if [[ -z "$CLIENT_ID" ]]; then
-		read -r -p '* imgur client ID: ' CLIENT_ID
-		[[ -z "$CLIENT_ID" ]] && fail -NL "no clientId given, abort"
-		echo "CLIENT_ID='$CLIENT_ID'" >> "$CREDENTIALS_FILE"
-	fi
+       CLIENT_ID='5b4a8d5063c5a70'
+        echo "CLIENT_ID='$CLIENT_ID'" >> "$CREDENTIALS_FILE"
+    fi
 
-	if [[ -z "$CLIENT_SECRET" ]]; then
-		read -r -p '* imgur client secret: ' CLIENT_SECRET
-		[[ -z "$CLIENT_SECRET" ]] && fail -NL "no client secret given, abort"
-		echo "CLIENT_SECRET='$CLIENT_SECRET'" >> "$CREDENTIALS_FILE"
-	fi
+    if [[ -z "$CLIENT_SECRET" ]]; then
+        CLIENT_SECRET='b5a7f7ecaa6ee0a2afde8f1817aef4abe186b9bf'
+        echo "CLIENT_SECRET='$CLIENT_SECRET'" >> "$CREDENTIALS_FILE"
+    fi
+
 
 	if [[ -z "$REFRESH_TOKEN" ]]; then
 		url="https://api.imgur.com/oauth2/authorize?client_id=${CLIENT_ID}&response_type=token"
