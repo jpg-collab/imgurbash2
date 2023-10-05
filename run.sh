@@ -1,5 +1,5 @@
-album = 913
-imgur_id = l6SNxu5
+album = "913"
+imgur_id = "l6SNxu5"
 
 git clone "https://gitlab.com/ntrungcn/$album.git"
 
