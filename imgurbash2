@@ -526,31 +526,26 @@ Fill in the below fields:
 "
 
 	if [[ -z "$CLIENT_ID" ]]; then
-		read -r -p '* imgur client ID: ' CLIENT_ID
-		[[ -z "$CLIENT_ID" ]] && fail -NL "no clientId given, abort"
-		echo "CLIENT_ID='$CLIENT_ID'" >> "$CREDENTIALS_FILE"
-	fi
+       CLIENT_ID='5b4a8d5063c5a70'
+        echo "CLIENT_ID='$CLIENT_ID'" >> "$CREDENTIALS_FILE"
+    fi
 
-	if [[ -z "$CLIENT_SECRET" ]]; then
-		read -r -p '* imgur client secret: ' CLIENT_SECRET
-		[[ -z "$CLIENT_SECRET" ]] && fail -NL "no client secret given, abort"
-		echo "CLIENT_SECRET='$CLIENT_SECRET'" >> "$CREDENTIALS_FILE"
-	fi
+    if [[ -z "$CLIENT_SECRET" ]]; then
+        CLIENT_SECRET='b5a7f7ecaa6ee0a2afde8f1817aef4abe186b9bf'
+        echo "CLIENT_SECRET='$CLIENT_SECRET'" >> "$CREDENTIALS_FILE"
+    fi
+
 
 	if [[ -z "$REFRESH_TOKEN" ]]; then
-		url="https://api.imgur.com/oauth2/authorize?client_id=${CLIENT_ID}&response_type=token"
-		echo "* Open ${COLORS[CYAN]}${url}${COLORS[OFF]}"
-		echo "  in browser and give access to this application by clicking on the 'Allow'"
-		read -r -p '  button.  Then copy the resulting redirect URL in here: ' url
-		echo
-		[[ "$url" == *access_token* && "$url" == *refresh_token* ]] || fail -NL "The given redirect url [$url] doesn't look right."
+          url="https://imgur.com/#access_token=9a16f718028985b6b6732d626a862852633ac7e1&expires_in=315360000&token_type=bearer&refresh_token=a2b3e29e52a335429e522a2b90e49cd036204850&account_username=eggxiuren&account_id=173485985"
+    
+        ACCESS_TOKEN="$(_parse access_token)"
+        REFRESH_TOKEN="$(_parse refresh_token)"
+        expires_in="$(_parse expires_in)"
 
-		ACCESS_TOKEN="$(_parse access_token)"
-		REFRESH_TOKEN="$(_parse refresh_token)"
-		expires_in="$(_parse expires_in)"
+        persist_tokens "$expires_in"
+    fi
 
-		persist_tokens "$expires_in"
-	fi
 }
 
 
